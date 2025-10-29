@@ -5,7 +5,6 @@ import pandas as pd
 import json
 import os
 from datetime import datetime, timedelta
-import eventlet
 import random
 
 from utils.predictor import ServicePredictor
@@ -23,7 +22,8 @@ app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME', 'vsis@volvo.com')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'password')
 app.config['MAIL_DEFAULT_SENDER'] = 'vsis@volvo.com'
 
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')
+# FIX: Changed from 'eventlet' to 'threading' for Python 3.13 compatibility
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
 mail = Mail(app)
 
 # Initialize managers

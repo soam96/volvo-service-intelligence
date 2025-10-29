@@ -1,16 +1,11 @@
-# Web Framework
 flask==2.3.3
 flask-socketio==5.3.6
 flask-mail==0.9.1
-eventlet==0.35.2
 gunicorn==22.0.0
-
-# Machine Learning
 xgboost==2.1.1
 scikit-learn==1.5.2
 pandas==2.2.3
 numpy==2.1.2
-
-# PDF Generation
 reportlab==4.2.5
+# eventlet==0.35.2  # Remove or comment out if causing issues
 
