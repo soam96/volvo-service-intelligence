@@ -1,0 +1,95 @@
+{
+  "engine_oil": {
+    "name": "Engine Oil",
+    "quantity": 16,
+    "min_stock": 5,
+    "unit": "liters",
+    "last_restocked": "2025-10-29T09:01:34.095989",
+    "last_used": "2025-10-29T08:42:52.039865"
+  },
+  "oil_filter": {
+    "name": "Oil Filter",
+    "quantity": 49,
+    "min_stock": 4,
+    "unit": "pieces",
+    "last_restocked": "2025-10-29T09:01:33.397861",
+    "last_used": "2025-10-29T08:42:52.039871"
+  },
+  "air_filter": {
+    "name": "Air Filter",
+    "quantity": 21,
+    "min_stock": 4,
+    "unit": "pieces",
+    "last_restocked": "2025-10-29T07:04:25.671908",
+    "last_used": "2025-10-29T08:42:52.039874"
+  },
+  "spark_plugs": {
+    "name": "Spark Plugs",
+    "quantity": 42,
+    "min_stock": 8,
+    "unit": "sets",
+    "last_restocked": "2025-10-29T09:01:30.097678",
+    "last_used": "2025-10-29T07:42:50.896275"
+  },
+  "brake_pads": {
+    "name": "Brake Pads",
+    "quantity": 19,
+    "min_stock": 3,
+    "unit": "sets",
+    "last_restocked": "2025-10-29T09:01:35.656170",
+    "last_used": "2025-10-29T07:42:25.430124"
+  },
+  "brake_fluid": {
+    "name": "Brake Fluid",
+    "quantity": 25,
+    "min_stock": 3,
+    "unit": "liters",
+    "last_restocked": "2025-10-29T09:01:37.728999",
+    "last_used": "2025-10-29T08:42:52.039876"
+  },
+  "ac_gas": {
+    "name": "AC Refrigerant",
+    "quantity": 24,
+    "min_stock": 5,
+    "unit": "cans",
+    "last_restocked": "2025-10-29T07:04:24.155148",
+    "last_used": "2025-10-29T07:26:52.049200"
+  },
+  "ac_cleaner": {
+    "name": "AC System Cleaner",
+    "quantity": 119,
+    "min_stock": 4,
+    "unit": "cans",
+    "last_restocked": "2025-10-29T08:17:28.503920",
+    "last_used": "2025-10-29T07:26:52.049203"
+  },
+  "ac_filter": {
+    "name": "Cabin Air Filter",
+    "quantity": 30,
+    "min_stock": 6,
+    "unit": "pieces",
+    "last_restocked": "2025-10-29T07:04:22.738782",
+    "last_used": "2025-10-29T07:52:23.708636"
+  },
+  "coolant": {
+    "name": "Engine Coolant",
+    "quantity": 35,
+    "min_stock": 8,
+    "unit": "liters",
+    "last_restocked": "2025-10-29T09:01:34.927733"
+  },
+  "transmission_fluid": {
+    "name": "Transmission Fluid",
+    "quantity": 45,
+    "min_stock": 5,
+    "unit": "liters",
+    "last_restocked": "2025-10-29T09:01:32.312883"
+  },
+  "power_steering_fluid": {
+    "name": "Power Steering Fluid",
+    "quantity": 35,
+    "min_stock": 4,
+    "unit": "liters",
+    "last_restocked": "2025-10-29T09:01:29.011903"
+  }
+}

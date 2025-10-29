@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="vsis-header">
+    <h1>🚗 Volvo Service Intelligence System</h1>
+    <p>AI-Powered Service Management Platform</p>
+</div>
+
+<div class="grid-2">
+    <!-- Input Form -->
+    <div class="glass-card" id="input-form">
+        <h2>🚘 Vehicle & Service Details</h2>
+        
+        <div class="form-group">
+            <label class="form-label">Car Number Plate *</label>
+            <input type="text" id="number_plate" class="form-input" placeholder="MH12AB1234" required>
+            <small style="opacity: 0.7; font-size: 0.85em;">Format: MH12AB1234</small>
+        </div>
+
+        <div class="grid-2">
+            <div class="form-group">
+                <label class="form-label">Car Model *</label>
+                <select id="car_model" class="form-select" required>
+                    <option value="">Select Model</option>
+                    <option value="XC60">XC60</option>
+                    <option value="XC90">XC90</option>
+                    <option value="XC40">XC40</option>
+                    <option value="S60">S60</option>
+                    <option value="V90">V90</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Manufacture Year *</label>
+                <input type="number" id="manufacture_year" class="form-input" min="2000" max="2024" value="2022" required>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="form-group">
+                <label class="form-label">Fuel Type *</label>
+                <select id="fuel_type" class="form-select" required>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Service Type *</label>
+                <select id="service_type" class="form-select" required>
+                    <option value="General">General Service</option>
+                    <option value="Major">Major Service</option>
+                    <option value="Brake">Brake Service</option>
+                    <option value="AC">AC Service</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="form-group">
+                <label class="form-label">Last Service Date</label>
+                <input type="date" id="last_service_date" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Total Kilometers *</label>
+                <input type="number" id="total_km" class="form-input" placeholder="e.g., 35000" required>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="form-group">
+                <label class="form-label">KM Since Last Service</label>
+                <input type="number" id="km_since_last_service" class="form-input" placeholder="e.g., 5000">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Days Since Last Service</label>
+                <input type="number" id="days_since_last_service" class="form-input" readonly>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 30px; margin-bottom: 20px;">🧰 Service Task Selection *</h3>
+
+        {% for category, tasks in tasks.items() %}
+        <div class="task-category">
+            <div class="task-header">
+                <strong>{{ category.replace('_', ' ').title() }}</strong>
+                <span>▼</span>
+            </div>
+            <div class="task-items">
+                {% for task in tasks %}
+                <div class="task-item">
+                    <input type="checkbox" class="task-checkbox" value="{{ task.id }}" 
+                           data-time="{{ task.time }}" id="task-{{ task.id }}">
+                    <label for="task-{{ task.id }}" class="task-name">{{ task.name }} ({{ task.time }}h)</label>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+        <div style="margin-top: 25px; padding: 15px; background: rgba(58, 134, 255, 0.1); border-radius: 10px; border-left: 4px solid var(--accent-blue);">
+            <small>💡 <strong>Note:</strong> Fields marked with * are required. The AI model will analyze your vehicle data and selected tasks to predict the exact service time required.</small>
+        </div>
+    </div>
+
+    <!-- Task Summary & Prediction -->
+    <div class="glass-card" style="position: sticky; top: 20px; height: fit-content;">
+        <h2>📊 Task Summary</h2>
+        
+        <div style="text-align: center; padding: 25px 20px;">
+            <div style="font-size: 4em; color: var(--accent-blue); margin-bottom: 10px; font-weight: 700;">
+                <span id="selected-count">0</span>
+            </div>
+            <h3 style="color: var(--light-text); margin-bottom: 5px;">Selected Tasks</h3>
+            <p style="opacity: 0.8; font-size: 0.9em;">Tasks chosen for service</p>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Task Names:</label>
+            <div id="task-names" style="padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; min-height: 60px; border: 1px solid var(--glass-border);">
+                <span style="opacity: 0.6;">No tasks selected yet</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Estimated Base Time:</label>
+            <div style="font-size: 2em; font-weight: bold; color: var(--highlight); text-align: center; padding: 10px; background: rgba(255, 209, 102, 0.1); border-radius: 10px;">
+                <span id="estimated-time">0.0</span> hours
+            </div>
+        </div>
+
+        <button id="predict-btn" class="btn btn-primary" style="width: 100; margin-top: 20px; padding: 18px; font-size: 1.1em;" disabled>
+            🔮 Predict Service Time
+        </button>
+
+        <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), rgba(6, 214, 160, 0.1)); border-radius: 12px; border: 1px solid var(--glass-border);">
+            <h4 style="color: var(--accent-blue); margin-bottom: 10px;">🎯 AI Prediction Features</h4>
+            <ul style="padding-left: 20px; opacity: 0.9;">
+                <li>Real-time service time prediction</li>
+                <li>Smart worker assignment</li>
+                <li>Inventory availability check</li>
+                <li>Queue position estimation</li>
+                <li>Completion time calculation</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Prediction Results -->
+<div class="glass-card result-card" id="prediction-result" style="display: none;">
+    <h2>🎯 Service Prediction Results</h2>
+    
+    <div class="grid-2" style="align-items: center; gap: 40px;">
+        <div style="text-align: center;">
+            <div class="time-gauge">
+                <div class="gauge-circle">
+                    <div class="gauge-text">
+                        <span id="predicted-time">0.0</span>
+                    </div>
+                </div>
+            </div>
+            <h3 style="margin-top: 15px; color: var(--accent-blue);">Predicted Service Time</h3>
+        </div>
+
+        <div>
+            <div class="info-section">
+                <h3>🚗 Vehicle Information</h3>
+                <p><strong>Service ID:</strong> <span id="service-id" style="color: var(--highlight);">-</span></p>
+                <p><strong>Worker Assigned:</strong> <span id="worker-name">-</span></p>
+                <p><strong>Specialization:</strong> <span id="worker-specialization">-</span></p>
+                <p><strong>Rating:</strong> ⭐ <span id="worker-rating">-</span>/5.0</p>
+            </div>
+
+            <div class="info-section">
+                <h3>📅 Estimated Completion</h3>
+                <p id="completion-time" style="font-size: 1.1em; font-weight: 600; color: var(--success);">-</p>
+            </div>
+
+            <div class="info-section">
+                <h3>⚙️ Workload Level</h3>
+                <div class="workload-bar">
+                    <div class="workload-fill" style="width: 0%"></div>
+                </div>
+                <p style="text-align: center; margin-top: 8px; font-size: 0.9em;">
+                    <span id="queue-position">1</span> in queue • <span id="cars-ahead">0</span> cars ahead
+                </p>
+            </div>
+
+            <div class="info-section">
+                <h3>🧩 Parts Availability</h3>
+                <p id="parts-availability" style="font-size: 1.1em; font-weight: 600;">✅ Available</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center; padding-top: 25px; border-top: 1px solid var(--glass-border);">
+        <button class="btn btn-success" onclick="restartPrediction()" style="margin-right: 15px;">
+            🚀 New Prediction
+        </button>
+        <a href="/admin" class="btn btn-primary">
+            📊 Admin Dashboard
+        </a>
+        <button class="btn btn-warning" onclick="useSampleData()" style="margin-left: 15px;">
+            🎮 Use Sample Data
+        </button>
+    </div>
+</div>
+
+<script>
+// Additional JavaScript for the user panel
+function restartPrediction() {
+    document.getElementById('input-form').style.display = 'block';
+    document.getElementById('prediction-result').style.display = 'none';
+    
+    // Reset form
+    document.getElementById('number_plate').value = '';
+    document.getElementById('car_model').value = '';
+    document.getElementById('manufacture_year').value = '2022';
+    document.getElementById('fuel_type').value = 'Petrol';
+    document.getElementById('service_type').value = 'General';
+    document.getElementById('last_service_date').value = '';
+    document.getElementById('total_km').value = '';
+    document.getElementById('km_since_last_service').value = '';
+    document.getElementById('days_since_last_service').value = '';
+    
+    document.querySelectorAll('.task-checkbox').forEach(cb => cb.checked = false);
+    window.app.selectedTasks.clear();
+    window.app.updateTaskSummary();
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function useSampleData() {
+    if (window.app) {
+        window.app.populateSampleData();
+    }
+}
+</script>
+{% endblock %}
