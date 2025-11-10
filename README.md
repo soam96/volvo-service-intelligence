@@ -4,7 +4,7 @@ Live Demo Python Flask Render
 A machine learning web application that predicts car service times based on various factors like vehicle specifications, service type, workshop conditions, and staff availability.
 
 🌐 Live Demo
-👉 Try it here: Car Service Time Predictor Web App: https://volvo-service-predictor.onrender.com/
+👉 Try it here: Car Service Time Predictor Web App:[ https://volvo-service-predictor.onrender.com/](https://volvo-service-intelligence-1.onrender.com/)
 
 You can test both:
 
