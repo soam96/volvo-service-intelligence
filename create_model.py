@@ -55,7 +55,7 @@ def generate_ultra_realistic_volvo_data(n_samples=2000):
     })
 
     # ----------------------------------------------------
-    # 🔧 OEM-Realistic Service Logic
+    # 🔧 OEM-Realistic Service Logic (No change here)
     # ----------------------------------------------------
 
     df['Engine_Oil_Change'] = (df['KM_Since_Last_Service'] > 10000).astype(int)
@@ -89,30 +89,54 @@ def generate_ultra_realistic_volvo_data(n_samples=2000):
         1, 0
     )
 
-    # Major service forces multiple replacements
     major = df['Service_Type'] == 'Major'
     df.loc[major, ['Engine_Oil_Change', 'Air_Filter_Replacement', 'Brake_Fluid_Change']] = 1
 
-    # Brake service forces brake components
     brake = df['Service_Type'] == 'Brake'
     df.loc[brake, ['Brake_Pads_Replacement', 'Brake_Fluid_Change']] = 1
 
-    # AC service forced components
     ac = df['Service_Type'] == 'AC'
     df.loc[ac, 'AC_Service'] = 1
+
+    # ---------------------------------------------------------
+    # ⭐ NEW: Add Realistic Workload & 48-Hour Time Estimation
+    # ---------------------------------------------------------
+
+    # Cars already waiting in the queue at service center
+    df["Workload_Cars_Pending"] = np.random.randint(1, 25, n_samples)
+
+    # Base service time (in hours)
+    realistic_base = {
+        "General": np.random.randint(4, 8),
+        "Major": np.random.randint(10, 18),
+        "Brake": np.random.randint(3, 7),
+        "AC": np.random.randint(2, 6),
+    }
+
+    df["Base_Service_Hours"] = df["Service_Type"].apply(lambda x: realistic_base[x])
+
+    # Workload adds 0.4 – 1 hour per car in queue
+    df["Workload_Delay_Hours"] = (df["Workload_Cars_Pending"] *
+                                  np.random.uniform(0.4, 1.0, n_samples)).round(1)
+
+    # Final calculated realistic time
+    df["Final_Service_Time_Hours"] = (
+        df["Base_Service_Hours"] +
+        df["Workload_Delay_Hours"]
+    ).clip(2, 48).round(1)
 
     return df
 
 
 # ---------------------------------------------------------
-# ✅ Model Training Function
+# ✅ ML Model Training
 # ---------------------------------------------------------
 def create_sample_model():
 
     print("\n🚀 Generating ultra-realistic Volvo dataset...")
     df = generate_ultra_realistic_volvo_data(2000)
 
-    # Base service times
+    # ML Predicted_Time (kept at 0–9 hrs range for model)
     base_times = {
         'General': 1.5,
         'Major': 3.8,
@@ -137,7 +161,6 @@ def create_sample_model():
     for task, time in task_times.items():
         df['Predicted_Time'] += df[task] * time
 
-    # Complexity factors (more realistic)
     df['Predicted_Time'] += df['Total_KM'] / 60000 * 0.4
     df['Predicted_Time'] += df['Days_Since_Last_Service'] / 365 * 0.25
 
@@ -149,7 +172,6 @@ def create_sample_model():
     df['Predicted_Time'] += np.random.normal(0, 0.25, len(df))
     df['Predicted_Time'] = df['Predicted_Time'].clip(0.8, 9.0).round(1)
 
-    # Train model
     X = pd.get_dummies(df.drop('Predicted_Time', axis=1))
     y = df['Predicted_Time']
 
@@ -170,7 +192,7 @@ def create_sample_model():
     print("\n📈 Training Accuracy (R²):", model.score(X, y))
 
     os.makedirs("data", exist_ok=True)
-    
+
     with open("volvo_service_model.pkl", "wb") as f:
         pickle.dump(model, f)
 

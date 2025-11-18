@@ -259,9 +259,21 @@
       "id": "W16",
       "name": "John Williams",
       "specialization": "General Maintenance",
-      "current_jobs": [],
+      "current_jobs": [
+        {
+          "service_id": "VOL_20251118155623W16",
+          "car_model": "XC60",
+          "service_type": "Major",
+          "start_time": "2025-11-18T15:56:23.502594",
+          "completion_time": "2025-11-19T01:01:50.775321",
+          "duration": 9.090909090909092,
+          "original_duration": 8.0,
+          "assigned_at": "2025-11-18T15:56:23.502666",
+          "status": "active"
+        }
+      ],
       "total_capacity": 8,
-      "current_workload": 0,
+      "current_workload": 9.090909090909092,
       "max_concurrent_jobs": 3,
       "efficiency": 0.88,
       "rating": 4.7,
@@ -504,8 +516,23 @@
         "assigned_at": "2025-11-18T15:43:49.567737",
         "status": "active"
       }
+    },
+    "VOL_20251118155623W16": {
+      "worker_id": "W16",
+      "worker_name": "John Williams",
+      "job_data": {
+        "service_id": "VOL_20251118155623W16",
+        "car_model": "XC60",
+        "service_type": "Major",
+        "start_time": "2025-11-18T15:56:23.502594",
+        "completion_time": "2025-11-19T01:01:50.775321",
+        "duration": 9.090909090909092,
+        "original_duration": 8.0,
+        "assigned_at": "2025-11-18T15:56:23.502666",
+        "status": "active"
+      }
     }
   },
   "service_queue": [],
-  "last_updated": "2025-11-18T15:43:49.567848"
+  "last_updated": "2025-11-18T15:56:23.502686"
 }
