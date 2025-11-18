@@ -4,9 +4,21 @@
       "id": "W01",
       "name": "Henry Wilson",
       "specialization": "Engine Specialist",
-      "current_jobs": [],
+      "current_jobs": [
+        {
+          "service_id": "VOL_20251118153858W01",
+          "car_model": "XC60",
+          "service_type": "Major",
+          "start_time": "2025-11-18T15:38:58.156277",
+          "completion_time": "2025-11-18T23:00:04.090343",
+          "duration": 7.351648351648352,
+          "original_duration": 6.69,
+          "assigned_at": "2025-11-18T15:38:58.156374",
+          "status": "active"
+        }
+      ],
       "total_capacity": 8,
-      "current_workload": 0,
+      "current_workload": 7.351648351648352,
       "max_concurrent_jobs": 3,
       "efficiency": 0.91,
       "rating": 4.8,
@@ -17,9 +29,21 @@
       "id": "W02",
       "name": "Tom White",
       "specialization": "Engine Specialist",
-      "current_jobs": [],
+      "current_jobs": [
+        {
+          "service_id": "VOL_20251118153953W02",
+          "car_model": "XC60",
+          "service_type": "Major",
+          "start_time": "2025-11-18T15:39:53.927264",
+          "completion_time": "2025-11-19T00:45:21.199991",
+          "duration": 9.090909090909092,
+          "original_duration": 8.0,
+          "assigned_at": "2025-11-18T15:39:53.927341",
+          "status": "active"
+        }
+      ],
       "total_capacity": 8,
-      "current_workload": 0,
+      "current_workload": 9.090909090909092,
       "max_concurrent_jobs": 3,
       "efficiency": 0.88,
       "rating": 4.2,
@@ -30,9 +54,21 @@
       "id": "W03",
       "name": "John Davis",
       "specialization": "Engine Specialist",
-      "current_jobs": [],
+      "current_jobs": [
+        {
+          "service_id": "VOL_20251118153144W03",
+          "car_model": "S60",
+          "service_type": "Major",
+          "start_time": "2025-11-18T15:31:44.188793",
+          "completion_time": "2025-11-18T23:34:59.840967",
+          "duration": 8.054347826086957,
+          "original_duration": 7.41,
+          "assigned_at": "2025-11-18T15:31:44.188993",
+          "status": "active"
+        }
+      ],
       "total_capacity": 8,
-      "current_workload": 0,
+      "current_workload": 8.054347826086957,
       "max_concurrent_jobs": 3,
       "efficiency": 0.92,
       "rating": 4.0,
@@ -43,9 +79,21 @@
       "id": "W04",
       "name": "Paul Smith",
       "specialization": "Engine Specialist",
-      "current_jobs": [],
+      "current_jobs": [
+        {
+          "service_id": "VOL_20251118153043W04",
+          "car_model": "XC40",
+          "service_type": "Major",
+          "start_time": "2025-11-18T15:30:43.501787",
+          "completion_time": "2025-11-18T23:21:18.795905",
+          "duration": 7.8431372549019605,
+          "original_duration": 8.0,
+          "assigned_at": "2025-11-18T15:30:43.502107",
+          "status": "active"
+        }
+      ],
       "total_capacity": 8,
-      "current_workload": 0,
+      "current_workload": 7.8431372549019605,
       "max_concurrent_jobs": 3,
       "efficiency": 1.02,
       "rating": 4.0,
@@ -56,9 +104,21 @@
       "id": "W05",
       "name": "Quinn White",
       "specialization": "Engine Specialist",
-      "current_jobs": [],
+      "current_jobs": [
+        {
+          "service_id": "VOL_20251118154349W05",
+          "car_model": "XC60",
+          "service_type": "Major",
+          "start_time": "2025-11-18T15:43:49.567610",
+          "completion_time": "2025-11-19T01:36:25.123166",
+          "duration": 9.876543209876543,
+          "original_duration": 8.0,
+          "assigned_at": "2025-11-18T15:43:49.567737",
+          "status": "active"
+        }
+      ],
       "total_capacity": 8,
-      "current_workload": 0,
+      "current_workload": 9.876543209876543,
       "max_concurrent_jobs": 3,
       "efficiency": 0.81,
       "rating": 4.5,
@@ -212,9 +272,21 @@
       "id": "W17",
       "name": "John Anderson",
       "specialization": "General Maintenance",
-      "current_jobs": [],
+      "current_jobs": [
+        {
+          "service_id": "VOL_20251118153237W17",
+          "car_model": "XC40",
+          "service_type": "General",
+          "start_time": "2025-11-18T15:32:37.434128",
+          "completion_time": "2025-11-18T19:18:07.434128",
+          "duration": 3.7583333333333333,
+          "original_duration": 4.51,
+          "assigned_at": "2025-11-18T15:32:37.434287",
+          "status": "active"
+        }
+      ],
       "total_capacity": 8,
-      "current_workload": 0,
+      "current_workload": 3.7583333333333333,
       "max_concurrent_jobs": 3,
       "efficiency": 1.2,
       "rating": 4.3,
@@ -225,9 +297,21 @@
       "id": "W18",
       "name": "Eric Garcia",
       "specialization": "General Maintenance",
-      "current_jobs": [],
+      "current_jobs": [
+        {
+          "service_id": "VOL_20251118153419W18",
+          "car_model": "XC60",
+          "service_type": "General",
+          "start_time": "2025-11-18T15:34:19.123722",
+          "completion_time": "2025-11-18T21:03:31.336111",
+          "duration": 5.486725663716815,
+          "original_duration": 6.2,
+          "assigned_at": "2025-11-18T15:34:19.123942",
+          "status": "active"
+        }
+      ],
       "total_capacity": 8,
-      "current_workload": 0,
+      "current_workload": 5.486725663716815,
       "max_concurrent_jobs": 3,
       "efficiency": 1.13,
       "rating": 4.5,
@@ -238,9 +322,21 @@
       "id": "W19",
       "name": "Chris Lee",
       "specialization": "General Maintenance",
-      "current_jobs": [],
+      "current_jobs": [
+        {
+          "service_id": "VOL_20251118154301W19",
+          "car_model": "XC60",
+          "service_type": "General",
+          "start_time": "2025-11-18T15:43:01.316795",
+          "completion_time": "2025-11-18T21:19:29.552089",
+          "duration": 5.607843137254902,
+          "original_duration": 5.72,
+          "assigned_at": "2025-11-18T15:43:01.317024",
+          "status": "active"
+        }
+      ],
       "total_capacity": 8,
-      "current_workload": 0,
+      "current_workload": 5.607843137254902,
       "max_concurrent_jobs": 3,
       "efficiency": 1.02,
       "rating": 4.0,
@@ -251,9 +347,21 @@
       "id": "W20",
       "name": "Frank Jones",
       "specialization": "General Maintenance",
-      "current_jobs": [],
+      "current_jobs": [
+        {
+          "service_id": "VOL_20251118153509W20",
+          "car_model": "XC60",
+          "service_type": "General",
+          "start_time": "2025-11-18T15:35:09.685615",
+          "completion_time": "2025-11-18T21:34:05.968801",
+          "duration": 5.982300884955753,
+          "original_duration": 6.76,
+          "assigned_at": "2025-11-18T15:35:09.685785",
+          "status": "active"
+        }
+      ],
       "total_capacity": 8,
-      "current_workload": 0,
+      "current_workload": 5.982300884955753,
       "max_concurrent_jobs": 3,
       "efficiency": 1.13,
       "rating": 4.9,
@@ -261,7 +369,143 @@
       "is_available": true
     }
   ],
-  "active_services": {},
+  "active_services": {
+    "VOL_20251118153043W04": {
+      "worker_id": "W04",
+      "worker_name": "Paul Smith",
+      "job_data": {
+        "service_id": "VOL_20251118153043W04",
+        "car_model": "XC40",
+        "service_type": "Major",
+        "start_time": "2025-11-18T15:30:43.501787",
+        "completion_time": "2025-11-18T23:21:18.795905",
+        "duration": 7.8431372549019605,
+        "original_duration": 8.0,
+        "assigned_at": "2025-11-18T15:30:43.502107",
+        "status": "active"
+      }
+    },
+    "VOL_20251118153144W03": {
+      "worker_id": "W03",
+      "worker_name": "John Davis",
+      "job_data": {
+        "service_id": "VOL_20251118153144W03",
+        "car_model": "S60",
+        "service_type": "Major",
+        "start_time": "2025-11-18T15:31:44.188793",
+        "completion_time": "2025-11-18T23:34:59.840967",
+        "duration": 8.054347826086957,
+        "original_duration": 7.41,
+        "assigned_at": "2025-11-18T15:31:44.188993",
+        "status": "active"
+      }
+    },
+    "VOL_20251118153237W17": {
+      "worker_id": "W17",
+      "worker_name": "John Anderson",
+      "job_data": {
+        "service_id": "VOL_20251118153237W17",
+        "car_model": "XC40",
+        "service_type": "General",
+        "start_time": "2025-11-18T15:32:37.434128",
+        "completion_time": "2025-11-18T19:18:07.434128",
+        "duration": 3.7583333333333333,
+        "original_duration": 4.51,
+        "assigned_at": "2025-11-18T15:32:37.434287",
+        "status": "active"
+      }
+    },
+    "VOL_20251118153419W18": {
+      "worker_id": "W18",
+      "worker_name": "Eric Garcia",
+      "job_data": {
+        "service_id": "VOL_20251118153419W18",
+        "car_model": "XC60",
+        "service_type": "General",
+        "start_time": "2025-11-18T15:34:19.123722",
+        "completion_time": "2025-11-18T21:03:31.336111",
+        "duration": 5.486725663716815,
+        "original_duration": 6.2,
+        "assigned_at": "2025-11-18T15:34:19.123942",
+        "status": "active"
+      }
+    },
+    "VOL_20251118153509W20": {
+      "worker_id": "W20",
+      "worker_name": "Frank Jones",
+      "job_data": {
+        "service_id": "VOL_20251118153509W20",
+        "car_model": "XC60",
+        "service_type": "General",
+        "start_time": "2025-11-18T15:35:09.685615",
+        "completion_time": "2025-11-18T21:34:05.968801",
+        "duration": 5.982300884955753,
+        "original_duration": 6.76,
+        "assigned_at": "2025-11-18T15:35:09.685785",
+        "status": "active"
+      }
+    },
+    "VOL_20251118153858W01": {
+      "worker_id": "W01",
+      "worker_name": "Henry Wilson",
+      "job_data": {
+        "service_id": "VOL_20251118153858W01",
+        "car_model": "XC60",
+        "service_type": "Major",
+        "start_time": "2025-11-18T15:38:58.156277",
+        "completion_time": "2025-11-18T23:00:04.090343",
+        "duration": 7.351648351648352,
+        "original_duration": 6.69,
+        "assigned_at": "2025-11-18T15:38:58.156374",
+        "status": "active"
+      }
+    },
+    "VOL_20251118153953W02": {
+      "worker_id": "W02",
+      "worker_name": "Tom White",
+      "job_data": {
+        "service_id": "VOL_20251118153953W02",
+        "car_model": "XC60",
+        "service_type": "Major",
+        "start_time": "2025-11-18T15:39:53.927264",
+        "completion_time": "2025-11-19T00:45:21.199991",
+        "duration": 9.090909090909092,
+        "original_duration": 8.0,
+        "assigned_at": "2025-11-18T15:39:53.927341",
+        "status": "active"
+      }
+    },
+    "VOL_20251118154301W19": {
+      "worker_id": "W19",
+      "worker_name": "Chris Lee",
+      "job_data": {
+        "service_id": "VOL_20251118154301W19",
+        "car_model": "XC60",
+        "service_type": "General",
+        "start_time": "2025-11-18T15:43:01.316795",
+        "completion_time": "2025-11-18T21:19:29.552089",
+        "duration": 5.607843137254902,
+        "original_duration": 5.72,
+        "assigned_at": "2025-11-18T15:43:01.317024",
+        "status": "active"
+      }
+    },
+    "VOL_20251118154349W05": {
+      "worker_id": "W05",
+      "worker_name": "Quinn White",
+      "job_data": {
+        "service_id": "VOL_20251118154349W05",
+        "car_model": "XC60",
+        "service_type": "Major",
+        "start_time": "2025-11-18T15:43:49.567610",
+        "completion_time": "2025-11-19T01:36:25.123166",
+        "duration": 9.876543209876543,
+        "original_duration": 8.0,
+        "assigned_at": "2025-11-18T15:43:49.567737",
+        "status": "active"
+      }
+    }
+  },
   "service_queue": [],
-  "last_updated": "2025-10-29T09:01:51.983085"
+  "last_updated": "2025-11-18T15:43:49.567848"
 }

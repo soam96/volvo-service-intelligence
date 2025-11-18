@@ -1,75 +1,75 @@
 {
   "engine_oil": {
     "name": "Engine Oil",
-    "quantity": 16,
+    "quantity": 7,
     "min_stock": 5,
     "unit": "liters",
     "last_restocked": "2025-10-29T09:01:34.095989",
-    "last_used": "2025-10-29T08:42:52.039865"
+    "last_used": "2025-11-18T15:43:49.570619"
   },
   "oil_filter": {
     "name": "Oil Filter",
-    "quantity": 49,
+    "quantity": 40,
     "min_stock": 4,
     "unit": "pieces",
     "last_restocked": "2025-10-29T09:01:33.397861",
-    "last_used": "2025-10-29T08:42:52.039871"
+    "last_used": "2025-11-18T15:43:49.570624"
   },
   "air_filter": {
     "name": "Air Filter",
-    "quantity": 21,
+    "quantity": 15,
     "min_stock": 4,
     "unit": "pieces",
     "last_restocked": "2025-10-29T07:04:25.671908",
-    "last_used": "2025-10-29T08:42:52.039874"
+    "last_used": "2025-11-18T15:43:49.570627"
   },
   "spark_plugs": {
     "name": "Spark Plugs",
-    "quantity": 42,
+    "quantity": 40,
     "min_stock": 8,
     "unit": "sets",
     "last_restocked": "2025-10-29T09:01:30.097678",
-    "last_used": "2025-10-29T07:42:50.896275"
+    "last_used": "2025-11-18T15:39:53.930338"
   },
   "brake_pads": {
     "name": "Brake Pads",
-    "quantity": 19,
+    "quantity": 11,
     "min_stock": 3,
     "unit": "sets",
     "last_restocked": "2025-10-29T09:01:35.656170",
-    "last_used": "2025-10-29T07:42:25.430124"
+    "last_used": "2025-11-18T15:43:49.570629"
   },
   "brake_fluid": {
     "name": "Brake Fluid",
-    "quantity": 25,
+    "quantity": 13,
     "min_stock": 3,
     "unit": "liters",
     "last_restocked": "2025-10-29T09:01:37.728999",
-    "last_used": "2025-10-29T08:42:52.039876"
+    "last_used": "2025-11-18T15:43:49.570631"
   },
   "ac_gas": {
     "name": "AC Refrigerant",
-    "quantity": 24,
+    "quantity": 18,
     "min_stock": 5,
     "unit": "cans",
     "last_restocked": "2025-10-29T07:04:24.155148",
-    "last_used": "2025-10-29T07:26:52.049200"
+    "last_used": "2025-11-18T15:43:49.570636"
   },
   "ac_cleaner": {
     "name": "AC System Cleaner",
-    "quantity": 119,
+    "quantity": 113,
     "min_stock": 4,
     "unit": "cans",
     "last_restocked": "2025-10-29T08:17:28.503920",
-    "last_used": "2025-10-29T07:26:52.049203"
+    "last_used": "2025-11-18T15:43:49.570638"
   },
   "ac_filter": {
     "name": "Cabin Air Filter",
-    "quantity": 30,
+    "quantity": 27,
     "min_stock": 6,
     "unit": "pieces",
     "last_restocked": "2025-10-29T07:04:22.738782",
-    "last_used": "2025-10-29T07:52:23.708636"
+    "last_used": "2025-11-18T15:43:49.570634"
   },
   "coolant": {
     "name": "Engine Coolant",
